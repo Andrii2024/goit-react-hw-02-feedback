@@ -4,6 +4,7 @@ import FeedbackApp from './Feedback/FeedbackApp';
 import Statistics from './Statistic/Statistics';
 import Section from './Section/Section';
 import Notification from './Notification/Notification';
+import styled from 'styled-components';
 
 class App extends Component {
   state = {
@@ -23,7 +24,7 @@ class App extends Component {
     const total = good + neutral + bad;
 
     return (
-      <div style={{ padding: '20px' }}>
+      <StyledWrapper>
         <h1>Please leave feedback</h1>
         <FeedbackApp onLeaveFeedback={this.handleLeaveFeedback} />
         {total === 0 ? (
@@ -33,9 +34,21 @@ class App extends Component {
             <Statistics good={good} neutral={neutral} bad={bad} />
           </Section>
         )}
-      </div>
+      </StyledWrapper>
     );
   }
 }
 
 export default App;
+
+export const StyledWrapper = styled.div`
+  border-radius: 10px;
+  margin: 0 auto;
+  background-color: antiquewhite;
+  max-height: 300px;
+  max-width: 400px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 10px;
+`;

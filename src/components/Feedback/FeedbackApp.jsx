@@ -1,23 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
+
+import { StyledButton, StyledWrapper } from './FeedbackApp.styled.js';
 
 const FeedbackApp = ({ onLeaveFeedback }) => (
-  <div style={{ display: 'inline-flex', gap: '5px' }}>
-    <button type="button" onClick={() => onLeaveFeedback('good')}>
+  <StyledWrapper>
+    <StyledButton type="button" onClick={() => onLeaveFeedback('good')}>
       Good
-    </button>
-    <button type="button" onClick={() => onLeaveFeedback('neutral')}>
+    </StyledButton>
+    <StyledButton type="button" onClick={() => onLeaveFeedback('neutral')}>
       Neutral
-    </button>
-    <button type="button" onClick={() => onLeaveFeedback('bad')}>
+    </StyledButton>
+    <StyledButton type="button" onClick={() => onLeaveFeedback('bad')}>
       Bad
-    </button>
-  </div>
+    </StyledButton>
+  </StyledWrapper>
 );
-
 export default FeedbackApp;
 
-export const StyledWrapper = styled;
 // import React, { Component } from 'react';
 
 // class FeedbackApp extends Component {
